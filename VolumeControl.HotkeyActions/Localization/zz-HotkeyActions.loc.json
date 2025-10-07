@@ -293,6 +293,14 @@
           "Description": {
             "Debug (/)": "TEST Overrides the global volume step for this action."
           }
+        },
+        "Volume Level": {
+          "Name": {
+            "Debug (/)": "TEST Volume Level"
+          },
+          "Description": {
+            "Debug (/)": "TEST The volume level to set the current foreground application to."
+          }
         }
       },
 
@@ -310,6 +318,14 @@
         },
         "Description": {
           "Debug (/)": "TEST Decreases the volume of the current foreground application."
+        }
+      },
+      "SetVolume": {
+        "Name": {
+          "Debug (/)": "TEST Set Volume"
+        },
+        "Description": {
+          "Debug (/)": "TEST Sets the volume of the current foreground application."
         }
       },
       "Mute": {

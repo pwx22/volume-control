@@ -323,6 +323,14 @@
           "Description": {
             "English (US/CA)": "Overrides the global volume step for this action."
           }
+        },
+        "Volume Level": {
+          "Name": {
+            "English (US/CA)": "Volume Level"
+          },
+          "Description": {
+            "English (US/CA)": "The volume level to set the current foreground application to."
+          }
         }
       },
 
@@ -340,6 +348,14 @@
         },
         "Description": {
           "English (US/CA)": "Decreases the volume of the current foreground application."
+        }
+      },
+      "SetVolume": {
+        "Name": {
+          "English (US/CA)": "Set Volume"
+        },
+        "Description": {
+          "English (US/CA)": "Sets the volume of the current foreground application."
         }
       },
       "Mute": {
