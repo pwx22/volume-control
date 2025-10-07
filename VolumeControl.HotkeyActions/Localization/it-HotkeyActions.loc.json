@@ -296,6 +296,14 @@
           "Description": {
             "Italiano (Italian)": "Sovrascrivi step globali volume per questa azione."
           }
+        },
+        "Volume Level": {
+          "Name": {
+            "Italiano (Italian)": "Livello volume"
+          },
+          "Description": {
+            "Italiano (Italian)": "Il livello del volume a cui impostare l'applicazione attuale in primo piano."
+          }
         }
       },
 
@@ -313,6 +321,14 @@
         },
         "Description": {
           "Italiano (Italian)": "Diminuisci il volume dell'applicazione attuale in primo piano."
+        }
+      },
+      "SetVolume": {
+        "Name": {
+          "Italiano (Italian)": "Imposta volume"
+        },
+        "Description": {
+          "Italiano (Italian)": "Imposta il volume dell'applicazione attuale in primo piano."
         }
       },
       "Mute": {

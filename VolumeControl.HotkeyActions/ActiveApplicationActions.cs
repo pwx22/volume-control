@@ -21,6 +21,9 @@ namespace VolumeControl.HotkeyActions
         // Volume Step
         private const string Setting_VolumeStep_Name = "Volume Step Override";
         private const string Setting_VolumeStep_Description = "Overrides the default volume step for this action.";
+        // Volume Level
+        private const string Setting_VolumeLevel_Name = "Volume Level";
+        private const string Setting_VolumeLevel_Description = "The volume level to set the current foreground application to.";
         #endregion Fields
 
         #region Properties
@@ -128,6 +131,32 @@ namespace VolumeControl.HotkeyActions
             {
                 session.Mute = true;
             }
+            if (sessions.Count > 0)
+            {
+                if (e.GetValue<bool>(Setting_SelectTarget_Name))
+                {
+                    VCAPI.AudioSessionMultiSelector.SetSelectedSessionsOrCurrentSession(sessions);
+                }
+                VCAPI.ShowSessionListNotification(sessions);
+            }
+        }
+        [HotkeyAction(Description = "Sets the volume of the current foreground application.")]
+        [HotkeyActionSetting(Setting_SelectTarget_Name, typeof(bool), Description = Setting_SelectTarget_Description)]
+        [HotkeyActionSetting(Setting_VolumeLevel_Name, typeof(int), "VolumeLevelDataTemplate", DefaultValue = 50, Description = Setting_VolumeLevel_Description, IsToggleable = true, StartsEnabled = true)]
+        public void SetVolume(object? sender, HotkeyPressedEventArgs e)
+        {
+            var (setVolumeLevel, volumeLevel) = e.GetSetting<int>(Setting_VolumeLevel_Name);
+
+            if (!setVolumeLevel)
+                return;
+
+            var sessions = GetActiveSessions();
+
+            foreach (var session in sessions)
+            {
+                session.Volume = volumeLevel;
+            }
+
             if (sessions.Count > 0)
             {
                 if (e.GetValue<bool>(Setting_SelectTarget_Name))
